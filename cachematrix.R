@@ -1,4 +1,4 @@
-## cache the inverser of matrix for faster computatio using functions and lexical scoping rules.
+## cache the inverse of matrix for faster computatio using functions and lexical scoping rules.
 
 ## function to create a special "matrix" object that can cache its inverse. 
 

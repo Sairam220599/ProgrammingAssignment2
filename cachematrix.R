@@ -1,15 +1,16 @@
-## Put comments here that give an overall description of what your
-## functions do
+## cache the inverser of matrix for faster computatio using functions and lexical scoping rules.
 
-## Write a short comment describing this function
+## function to create a special "matrix" object that can cache its inverse. 
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) 
+{
   
     inv <- NULL
-    set <- function(y) {
-    x <<- y
-    inv <<- NULL
-  }
+    set <- function(y) 
+    {
+        x <<- y
+        inv <<- NULL
+    }
   
   get <- function() x
   setinv <- function(inverse) inv <<- inverse
@@ -19,19 +20,22 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## function to compute the inverse of the special "matrix" returned by makeCacheMatrix
 
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+cacheSolve <- function(x, ...) 
+{
+  ## Return a matrix that is the inverse of 'x'
   inv <- x$getinv()
-  if(!is.null(inv)) {
-    message("getting cached data")
-    return(inv)
+  
+  if(!is.null(inv)) 
+  {
+      message("getting cached data")
+      return(inv)
   }
+  
   data <- x$get()
-  inv <- (solve, ...)
+  inv <- solve(data, ...)
   x$setinv(inv)
   m
-  
   
 }
